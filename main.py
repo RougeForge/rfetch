@@ -1,3 +1,6 @@
+from src.system import get_os_name
+
+
 def print_banner():
     print("============================")
     print("      Rogue Forge")
@@ -8,7 +11,8 @@ def print_banner():
 
 def main():
     print_banner()
-    print("Loading system information...")
+
+    print(f"OS : {get_os_name()}")
 
 
 if __name__ == "__main__":
