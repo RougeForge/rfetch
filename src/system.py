@@ -1,5 +1,6 @@
 import platform
 import shutil
+import subprocess
 
 def get_os_name():
     with open("/etc/os-release", "r") as file:
@@ -36,3 +37,17 @@ def get_ram_size():
                 ram_gb = round(gb, 1)
                 return f"{ram_gb} GB"
     return "Unknown RAM"
+
+def get_gpu_name():
+    result = subprocess.run(
+    ["lspci"],
+    capture_output=True,
+    text=True
+)
+    for line in result.stdout.splitlines():
+        if "VGA" in line:
+            gpu = line.split("VGA compatible controller:")[1]
+            gpu = gpu.split("(rev")[0]
+            gpu = gpu.strip()   
+            return gpu
+    return "Unknown GPU"

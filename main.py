@@ -1,4 +1,4 @@
-from src.system import get_os_name, get_kernel, is_steam_installed, is_gamemode_installed, get_cpu_name, get_ram_size
+from src.system import get_os_name, get_kernel, is_steam_installed, is_gamemode_installed, get_cpu_name, get_ram_size, get_gpu_name
 
 def print_banner():
     print("============================")
@@ -15,7 +15,7 @@ def main():
     print(f"Kernel    : {get_kernel()}")
     print(f"CPU       : {get_cpu_name()}")
     print(f"RAM       : {get_ram_size()}")
-
+    print(f"GPU       : {get_gpu_name()}")
     steam = "Installed ✅" if is_steam_installed() else "Not Installed ❌"
 
     print(f"Steam     : {steam}")
