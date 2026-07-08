@@ -15,3 +15,6 @@ def get_kernel():
 
 def is_steam_installed():
     return shutil.which("steam") is not None
+
+def is_gamemode_installed():
+    return shutil.which("gamemoderun") is not None
