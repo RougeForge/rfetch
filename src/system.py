@@ -18,3 +18,10 @@ def is_steam_installed():
 
 def is_gamemode_installed():
     return shutil.which("gamemoderun") is not None
+
+def get_cpu_name():
+    with open("/proc/cpuinfo", "r") as file:
+        for line in file:
+            if line.startswith("model name"):
+                return line.split(":", 1)[1].strip().strip('"')            
+    return "Unknown CPU"
