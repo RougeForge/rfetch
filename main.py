@@ -1,5 +1,5 @@
 from src.system import get_os_name, get_kernel
-
+from src.system import get_os_name, get_kernel, is_steam_installed
 
 def print_banner():
     print("============================")
@@ -14,7 +14,12 @@ def main():
 
     print(f"OS      : {get_os_name()}")
     print(f"Kernel  : {get_kernel()}")
+    print(f"OS      : {get_os_name()}")
+    print(f"Kernel  : {get_kernel()}")
 
+    steam = "Installed ✅" if is_steam_installed() else "Not Installed ❌"
+
+    print(f"Steam   : {steam}")
 
 if __name__ == "__main__":
     main()
