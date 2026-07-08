@@ -1,4 +1,3 @@
-from src.system import get_os_name, get_kernel
 from src.system import get_os_name, get_kernel, is_steam_installed
 
 def print_banner():
@@ -12,8 +11,6 @@ def print_banner():
 def main():
     print_banner()
 
-    print(f"OS      : {get_os_name()}")
-    print(f"Kernel  : {get_kernel()}")
     print(f"OS      : {get_os_name()}")
     print(f"Kernel  : {get_kernel()}")
 
