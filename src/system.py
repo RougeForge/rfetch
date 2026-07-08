@@ -25,3 +25,14 @@ def get_cpu_name():
             if line.startswith("model name"):
                 return line.split(":", 1)[1].strip().strip('"')            
     return "Unknown CPU"
+
+def get_ram_size():
+    with open("/proc/meminfo", "r") as file:
+        for line in file:
+            if line.startswith("MemTotal"):
+                value = line.split(":", 1)[1].strip()
+                kb = int(value.split()[0])
+                gb = kb/1024/1024
+                ram_gb = round(gb, 1)
+                return f"{ram_gb} GB"
+    return "Unknown RAM"
