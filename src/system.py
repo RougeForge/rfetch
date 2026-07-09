@@ -73,7 +73,7 @@ def get_uptime():
 def get_desktop_environment():
     desktop = os.environ.get("XDG_CURRENT_DESKTOP")
 
-    if desktop is None:
+    if not desktop:
             return "Unknown Desktop"
     
     desktop = desktop.split(":")[1]
@@ -81,19 +81,28 @@ def get_desktop_environment():
 
 def get_display_server():
     display_server = os.environ.get("XDG_SESSION_TYPE")
-    if display_server is None:
+    if not display_server:
         return "Unknown Display"
     return display_server
 
 def get_shell():
     shell = os.environ.get("SHELL")
-    if shell is None:
+    if not shell:
         return "Unknown Shell"
     shell = shell.split("/")[-1]
     return shell
 
 def get_architecture():
     architecture = platform.machine()
-    if architecture is None:
+    if not architecture:
         return "Unknown architecture"
     return architecture
+
+def get_host():
+    with open("/sys/devices/virtual/dmi/id/product_name", "r") as file:
+        host = file.readline()
+        
+        host = host.strip()
+        if not host:
+            return "Unknown host"
+        return host
