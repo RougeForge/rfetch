@@ -59,3 +59,13 @@ def get_disk_usage():
     used = used / (1024 ** 3)
     free = free / (1024 ** 3)
     return round(total, 1), round(used, 1), round(free, 1)
+
+def get_uptime():
+    with open("/proc/uptime", "r") as file:
+        line = file.readline()
+        uptime = line.split(" ", 1)[0].strip()
+        seconds = int(float(uptime))
+        hours = seconds // 3600
+        remaining_seconds = seconds % 3600
+        mins = remaining_seconds // 60
+        return hours, mins
