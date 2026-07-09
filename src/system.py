@@ -14,11 +14,8 @@ def get_os_name():
 def get_kernel():
     return platform.release()
 
-def is_steam_installed():
-    return shutil.which("steam") is not None
-
-def is_gamemode_installed():
-    return shutil.which("gamemoderun") is not None
+def is_program_installed(program):
+    return shutil.which(program) is not None
 
 def get_cpu_name():
     with open("/proc/cpuinfo", "r") as file:
@@ -100,9 +97,9 @@ def get_architecture():
 
 def get_host():
     with open("/sys/devices/virtual/dmi/id/product_name", "r") as file:
-        host = file.readline()
-        
-        host = host.strip()
+        host = file.readline().strip()
+
         if not host:
             return "Unknown host"
         return host
+    
