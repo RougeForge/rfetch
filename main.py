@@ -1,4 +1,4 @@
-from src.system import get_os_name, get_kernel, is_program_installed, get_cpu_name, get_ram_size, get_gpu_name, get_disk_usage, get_uptime, get_desktop_environment, get_display_server, get_shell, get_architecture, get_host, get_mesa_version
+from src.system import get_os_name, get_kernel, is_program_installed, get_cpu_name, get_ram_size, get_gpu_name, get_disk_usage, get_uptime, get_desktop_environment, get_display_server, get_shell, get_architecture, get_host, get_mesa_version, get_vulkan_version
 
 def print_banner():
     print("============================")
@@ -56,7 +56,7 @@ def main():
     print(f"{'Gamescope':<13}: {gamescope}")
     print(f"{"Mesa":<13}: {get_mesa_version()}")
 
-
+    print(f"{"Vulkan":<13}: {get_vulkan_version()}")
 
 if __name__ == "__main__":
     main()

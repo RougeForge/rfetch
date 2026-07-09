@@ -116,3 +116,18 @@ def get_mesa_version():
             mesa_version = mesa_version.strip()
             return mesa_version
     return "Unknown Mesa Version"
+
+def get_vulkan_version():
+    vulkan = shutil.which("vulkaninfo")
+    if not vulkan:
+        return "Not Installed ❌"
+    result = subprocess.run(
+        ["vulkaninfo", "--summary"],
+        capture_output=True,
+        text=True
+    )
+    for line in result.stdout.splitlines():
+            if "Vulkan Instance Version" in line:
+                return line.split(":")[1].strip()
+            
+    return "Unknown Vulkan Version"
