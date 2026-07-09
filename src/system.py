@@ -51,3 +51,11 @@ def get_gpu_name():
             gpu = gpu.strip()   
             return gpu
     return "Unknown GPU"
+
+
+def get_disk_usage():
+    total, used, free = shutil.disk_usage("/")
+    total = total / (1024 ** 3)
+    used = used / (1024 ** 3)
+    free = free / (1024 ** 3)
+    return round(total, 1), round(used, 1), round(free, 1)
