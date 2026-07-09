@@ -85,3 +85,9 @@ def get_display_server():
         return "Unknown Display"
     return display_server
 
+def get_shell():
+    shell = os.environ.get("SHELL")
+    if shell is None:
+        return "Unknown Shell"
+    shell = shell.split("/")[-1]
+    return shell
