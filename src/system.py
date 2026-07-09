@@ -72,9 +72,16 @@ def get_uptime():
 
 def get_desktop_environment():
     desktop = os.environ.get("XDG_CURRENT_DESKTOP")
-    
+
     if desktop is None:
             return "Unknown Desktop"
     
     desktop = desktop.split(":")[1]
     return desktop
+
+def get_display_server():
+    display_server = os.environ.get("XDG_SESSION_TYPE")
+    if display_server is None:
+        return "Unknown Display"
+    return display_server
+

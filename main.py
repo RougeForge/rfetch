@@ -1,4 +1,4 @@
-from src.system import get_os_name, get_kernel, is_steam_installed, is_gamemode_installed, get_cpu_name, get_ram_size, get_gpu_name, get_disk_usage, get_uptime, get_desktop_environment
+from src.system import get_os_name, get_kernel, is_steam_installed, is_gamemode_installed, get_cpu_name, get_ram_size, get_gpu_name, get_disk_usage, get_uptime, get_desktop_environment, get_display_server
 
 def print_banner():
     print("============================")
@@ -24,6 +24,7 @@ def main():
     hours, mins = get_uptime()
     print(f"UpTime    : {hours}h {mins}m")
     print(f"Desktop   : {get_desktop_environment()}")
+    print(f"Display   : {get_display_server()}")
     gamemode = "Installed ✅" if is_gamemode_installed() else "Not Installed ❌"
 
     print(f"GameMode  : {gamemode}")
