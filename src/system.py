@@ -91,3 +91,9 @@ def get_shell():
         return "Unknown Shell"
     shell = shell.split("/")[-1]
     return shell
+
+def get_architecture():
+    architecture = platform.machine()
+    if architecture is None:
+        return "Unknown architecture"
+    return architecture
