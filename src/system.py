@@ -104,7 +104,7 @@ def get_host():
         return host
     
 def get_mesa_version():
-    if not shutil.which("glxinfo"):
+    if not is_program_installed("glxinfo"):
         return "Not Installed ❌"
     result = subprocess.run(
         ["glxinfo"],
@@ -136,7 +136,7 @@ def get_vulkan_version():
     return "Unknown Vulkan Version"
 
 def get_opengl_renderer():
-    if not shutil.which("glxinfo"):
+    if not is_program_installed("glxinfo"):
         return "Not Installed ❌"
     result = subprocess.run(
         ["glxinfo"],

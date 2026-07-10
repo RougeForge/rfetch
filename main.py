@@ -1,4 +1,21 @@
-from src.system import get_os_name, get_kernel, is_program_installed, get_cpu_name, get_ram_size, get_gpu_name, get_disk_usage, get_uptime, get_desktop_environment, get_display_server, get_shell, get_architecture, get_host, get_mesa_version, get_vulkan_version, get_opengl_renderer
+from src.system import (
+    get_architecture,
+    get_cpu_name,
+    get_desktop_environment,
+    get_disk_usage,
+    get_display_server,
+    get_gpu_name,
+    get_host,
+    get_kernel,
+    get_mesa_version,
+    get_opengl_renderer,
+    get_os_name,
+    get_ram_size,
+    get_shell,
+    get_uptime,
+    get_vulkan_version,
+    is_program_installed,
+)
 
 def print_banner():
     print("============================")
