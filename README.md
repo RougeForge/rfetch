@@ -91,6 +91,17 @@ OpenGL       : Mesa Intel(R) HD Graphics 4000 (IVB GT2)
 Vulkan       : 1.3.275
 ```
 
+## Requirements
+
+- Python 3.10+
+- Linux
+
+Some features also require the following system tools:
+
+- `glxinfo` (Mesa/OpenGL information)
+- `vulkaninfo` (Vulkan information)
+- `lspci` (GPU detection)
+
 ## Roadmap
 
 ### v0.2
