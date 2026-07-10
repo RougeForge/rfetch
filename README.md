@@ -49,11 +49,22 @@ git clone https://github.com/RogueForge/rfetch.git
 cd rfetch
 ```
 
+Install the required system dependencies (Ubuntu/Debian):
+
+```bash
+sudo apt update
+sudo apt install python3 pciutils mesa-utils vulkan-tools
+```
+
 Run:
 
 ```bash
 python3 main.py
 ```
+
+> **Note**
+>
+> `rfetch` works without these tools, but some information will display as `Not Installed ❌` if they are missing.
 
 ## Example Output
 
@@ -91,7 +102,7 @@ OpenGL       : Mesa Intel(R) HD Graphics 4000 (IVB GT2)
 Vulkan       : 1.3.275
 ```
 
-## Requirements
+## Dependencies
 
 - Python 3.10+
 - Linux
@@ -102,6 +113,19 @@ Some features also require the following system tools:
 - `vulkaninfo` (Vulkan information)
 - `lspci` (GPU detection)
 
+### Other distributions
+
+**Arch Linux**
+
+```bash
+sudo pacman -S python pciutils mesa-utils vulkan-tools
+```
+
+**Fedora**
+
+```bash
+sudo dnf install python3 pciutils mesa-demos vulkan-tools
+```
 ## Roadmap
 
 ### v0.2
